@@ -1,0 +1,34 @@
+<h4>Application Form</h4>
+
+<form action="/job/{{job['id']}}/apply" method="POST" enctype="multipart/form-data">
+    <div class="mb-2">
+    <label>Full Name</label><br>
+    <input type="text" name="full_name" placeholder="David Miller" required/><br>
+    </div>
+    <div class="mb-2">
+    <label>Email</label><br>
+    <input type="text" name="email" placeholder="david.miller@textcomapny.com" required/><br>
+    </div>
+
+    <div class="mb-2">
+    <label>LinkedIn URL</label><br>
+    <input type="text" name="linkedin" placeholder="www.linkedin.con/in/david-miller" /><br>
+    </div>
+    <div class="mb-2">
+        <label>Education</label><br>
+        <textarea type="text" name="education"></textarea><br>
+    </div>
+    <div class="mb-2">
+        <label>Work Experience</label><br>
+        <textarea type="text" name="work"></textarea><br>
+    </div>
+    <div class="mb-2">
+        <label>Resume</label><br>
+        <input type="file" name="resume_file"><br>
+    </div>
+    <div class="mb-2">
+    <input type="submit" class="btn btn-primary btn-lg"/>
+    </div>
+    </form>
+
+</form>

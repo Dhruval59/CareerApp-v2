@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Build Career</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  </head>
+  <style>
+    #banner {
+      height: 360px;
+      width: 100%;
+      object-fit:cover;
+      margin-bottom: 16px;
+    }
+  </style>
+  <body>
+    {% include 'navbar.html' %}
+    
+    <img src="../static/banner.jpeg" id='banner' class="img-fluid" alt="Responsive image">
+    <div class="container">
+      <h1 class="text-center mt-2 mb-4">
+        Apply Here!
+      </h1>
+      <h3 class="mb-2">{{job.title}}</h3>
+      <p class="lead mt-0">{{job.location}}</p>
+      <h4>Responsibilities</h4>
+      <ul>
+        {% for line in job.responsibilities.split(";") if line.strip() %}
+         <li>{{line}}</li> 
+        {% endfor %}
+      </ul>
+      <h4>Requirements</h4>
+      <ol>
+        {% for line in job.requirements.split(";") if line.strip() %}
+          <li>{{line}}</li>
+        {% endfor %}
+      </ol>
+      <h4>Salary</h4>
+      <p><b>{{job.currency}}</b>: {{job.salary}}</p>
+      {% include 'applicationform.html' %}
+    </div>
+    {% include 'footer.html' %}
+  </body>
+</html>
